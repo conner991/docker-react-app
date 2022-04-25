@@ -3,12 +3,14 @@ services:
   react-app:
     # stdin_open: true
     # tty: true
-    build: . 
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
     volumes:
       - ./src:/app/src
     environment:
-      - REACT_APP_NAME=Conner
+      - REACT_APP_NAME=Conner-dev
     # env_file:
     #   - ./.env
